@@ -1,0 +1,49 @@
+import java.util.Scanner;
+class Quadratic
+{
+public void compute(int a,int b,int c)
+{
+Scanner scan=new Scanner(System.in);
+while(a==0)
+{
+System.out.println("Enter a non zero value of a:");
+a=scan.nextInt();
+}
+int d=b*b-4*a*c;
+double r1=0.0,r2=0.0;
+if(d==0)
+{
+r1 = (-b)/(2*a);
+System.out.println("Roots are real and equal");
+System.out.println("Root1 = Root2 ="+ r1);
+}
+else if(d>0)
+{
+r1 = ((-b)+(Math.sqrt(d)))/(double)(2*a);
+r2 = ((-b)-(Math.sqrt(d)))/(double)(2*a);
+System.out.println("Roots are real and distinct");
+System.out.println("Roo1 =" + r1 + "Root2 =" + r2);
+}
+else if(d<0)
+{
+System.out.println("Roots are imaginary");
+r1 = (-b)/(2*a);
+r2 = Math.sqrt(-d)/(2*a);
+System.out.println("Root1 ="+r1+"+i"+r2);
+System.out.println("Root2 ="+r1+"-i"+r2);
+}
+}
+public static void main(String args[])
+{
+Scanner scan=new Scanner(System.in);
+int a,b,c;
+System.out.println("Enter the co-efficients of a,b and c of a quadratic equation:");
+a=scan.nextInt();
+b=scan.nextInt();
+c=scan.nextInt();
+Quadratic q=new Quadratic();
+q.compute(a,b,c);
+System.out.println("--------------------------------------------------------------");
+System.out.println("Sneha N Shastri - 1BM22CS283");
+}
+}
