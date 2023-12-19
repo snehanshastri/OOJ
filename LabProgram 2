@@ -1,0 +1,81 @@
+public class Subject
+{
+int subjectmarks;
+int credits;
+int grade;
+}
+
+import java.util.Scanner;
+public class Student
+{
+Subject sub[];
+String name;
+String usn;
+double sgpa;
+Scanner scan=new Scanner(System.in);
+Student()
+{
+sub = new Subject[8];
+for(int i=0;i<8;i++)
+sub[i] = new Subject();
+scan = new Scanner(System.in);
+}
+public void getStudentDetails()
+{
+System.out.println("Enter name:");
+name=scan.nextLine();
+System.out.println("Enter USN:");
+usn=scan.nextLine();
+}
+
+public void getMarks()
+{
+for(int i=0;i<8;i++)
+{
+System.out.println("Enter Subject "+(i+1)+" marks:");
+sub[i].subjectmarks=scan.nextInt();
+System.out.println("Enter Subject "+(i+1)+" credits:");
+sub[i].credits=scan.nextInt();
+if(sub[i].subjectmarks==100)
+sub[i].grade=10;
+else if(sub[i].subjectmarks<40)
+sub[i].grade=0;
+else
+sub[i].grade=(sub[i].subjectmarks/10)+1;
+}
+}
+
+public void computeSGPA()
+{
+int sumc=0;
+double prod=0;
+for(int i=0;i<8;i++)
+{
+sumc=sumc+sub[i].credits;
+prod=prod+(sub[i].grade*sub[i].credits);
+}
+sgpa=prod/sumc;
+}
+}
+
+
+public class Sgpa
+{
+public static void main(String args[])
+{
+Student s1=new Student();
+s1.getStudentDetails();
+s1.getMarks();
+s1.computeSGPA();
+System.out.println("Name:"+s1.name);
+System.out.println("USN:"+s1.usn);
+System.out.println("S.no\tSubject Marks\tCredits\tGrade");
+for(int i=0;i<8;i++)
+{
+System.out.println((i+1)+"\t"+s1.sub[i].subjectmarks+"\t"+s1.sub[i].credits+"\t"+s1.sub[i].grade);
+}
+System.out.println("SGPA="+s1.sgpa);
+System.out.println("----------------------------------------------------------------------------------");
+System.out.println("Sneha N Shastri - 1BM22CS283");
+}
+}
