@@ -1,0 +1,84 @@
+import java.util.Scanner;
+class InputScanner
+{
+Scanner scan;
+InputScanner()
+{
+scan=new Scanner(System.in);
+}
+}
+
+abstract class Shape extends InputScanner
+{
+double a;
+double b;
+abstract void getInput();
+abstract void printArea();
+}
+
+class Rectangle extends Shape
+{
+void getInput()
+{
+InputScanner is=new InputScanner();
+System.out.println("Enter value of a:");
+a=scan.nextDouble();
+System.out.println("Enter value of b:");
+b=scan.nextDouble();
+}
+void printArea()
+{
+double area=a*b;
+System.out.println("The area of rectangle is:"+area);
+}
+}
+
+class Triangle extends Shape
+{
+void getInput()
+{
+InputScanner is=new InputScanner();
+System.out.println("Enter value of a(base):");
+a=scan.nextDouble();
+System.out.println("Enter value of b(base):");
+b=scan.nextDouble();
+}
+void printArea()
+{
+double area=0.5*a*b;
+System.out.println("The area of triangle is:"+area);
+}
+}
+
+class Circle extends Shape
+{
+double r;
+void getInput()
+{
+InputScanner is=new InputScanner();
+System.out.println("Enter value of radius:");
+r=scan.nextDouble();
+}
+void printArea()
+{
+double area=3.14*r*r;
+System.out.println("The area of circle is:"+area);
+}
+}
+
+class MainShape
+{
+public static void main(String args[])
+{
+Rectangle r=new Rectangle();
+Triangle t=new Triangle();
+Circle c=new Circle();
+r.getInput();
+r.printArea();
+t.getInput();
+t.printArea();
+c.getInput();
+c.printArea();
+System.out.println("Sneha N Shastri---------1BM22CS283");
+}
+}
