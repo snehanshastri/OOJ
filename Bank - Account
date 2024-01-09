@@ -1,0 +1,174 @@
+//Account
+import java.util.Scanner;
+class Account
+{
+String cname;
+long accno;
+String type;
+Account(String cn,long ac,String t)
+{
+cname=cn;
+accno=ac;
+type=t;
+}
+}
+
+//Account class
+
+import java.util.Scanner;
+class MainAccount
+{
+public static void main(String args[])
+{
+Scanner scan=new Scanner(System.in);
+System.out.println("Enter Name:");
+String s=scan.nextLine();
+System.out.println("Enter Account Number:");
+long ac=scan.nextLong();
+System.out.println("Enter account type:Savings/Current");
+String t=scan.next();
+System.out.println("Enter account balance:");
+double b=scan.nextDouble();
+System.out.println("---------------------------------------------------------------");
+System.out.println("Details:");
+System.out.println("Name:"+s);
+System.out.println("Acc No:"+ac);
+System.out.println("Acc Type:"+t);
+System.out.println("---------------------------------------------------------------");
+if(t.equalsIgnoreCase("Savings"))
+{
+SavAcct sv=new SavAcct(s,ac,t,b);
+sv.operations();
+}
+else if(t.equalsIgnoreCase("Current"))
+{
+CurrAct ct=new CurrAct(s,ac,t,b);
+ct.operations();
+}
+System.out.println("---------------------------------------------------------------");
+System.out.println("Sneha N Shastri - 1BM22CS283");
+}
+}
+
+//Savings Account Class
+
+import java.util.Scanner;
+class SavAcct extends Account
+{
+double balance;
+SavAcct(String cn,long ac,String t,double b)
+{
+super(cn,ac,t);
+balance=b;
+}
+public void operations()
+{
+Scanner scan=new Scanner(System.in);
+int c;
+do
+{
+System.out.println("Enter choice:");
+System.out.println("1.Deposit");
+System.out.println("2.Withdraw");
+System.out.println("3.Compute and Deposit interest.");
+System.out.println("4.Display Balance");
+System.out.println("5.Exit");
+c=scan.nextInt();
+switch(c)
+{
+case 1:
+System.out.println("Enter deposit amount:");
+double deposit=scan.nextDouble();
+balance+=deposit;
+break;
+case 2:
+if(balance<100)
+{
+System.out.println("Less than minimum balance. Fine of Rs.5");
+balance-=5;
+}
+else
+{
+System.out.println("Enter withdrawal amount:");
+double amt=scan.nextDouble();
+balance-=amt;
+System.out.println("Withdrawal successful. Current balance="+balance);
+}
+break;
+case 3:
+double r=6.0/100.0;
+System.out.println("Enter duration of account holding:");
+int t=scan.nextInt();
+double interest=balance*Math.pow((1+r),t)-balance;
+balance+=interest;
+System.out.println("Interest="+interest);
+System.out.println("Balance="+balance);
+break;
+case 4:
+System.out.println("Balance is:"+balance);
+break;
+case 5:
+System.out.println("Thank You.");
+break;
+default:
+System.out.println("Invalid Choice.");
+}
+}while(c!=5);
+}
+}
+
+//Current Account
+import java.util.Scanner;
+class CurrAct extends Account
+{
+double balance;
+CurrAct(String cn,long ac,String t,double b)
+{
+super(cn,ac,t);
+balance=b;
+}
+public void operations()
+{
+Scanner scan=new Scanner(System.in);
+int c;
+do
+{
+System.out.println("Enter choice:");
+System.out.println("1.Deposit");
+System.out.println("2.Display Balance");
+System.out.println("3.Withdraw");
+System.out.println("4.Exit");
+c=scan.nextInt();
+switch(c)
+{
+case 1:
+System.out.println("Enter deposit amount:");
+double deposit=scan.nextDouble();
+balance+=deposit;
+break;
+case 2:
+System.out.println("Balance is:"+balance);
+break;
+case 3:
+if(balance<100)
+{
+System.out.println("Less than minimum balance. Fine of Rs.5");
+balance-=5;
+}
+else
+{
+System.out.println("Enter withdrawal amount:");
+double amt=scan.nextDouble();
+balance-=amt;
+System.out.println("Withdrawal successful. Current balance="+balance);
+}
+break;
+case 4:
+System.out.println("Thank You.");
+break;
+default:
+System.out.println("Invalid Choice.");
+}
+}while(c!=4);
+}
+}
