@@ -1,0 +1,64 @@
+import java.util.Scanner;
+class StringDemo2
+{
+    public static void main(String args[])
+    {
+        //6
+        System.out.println("Bmsce equals Bmsce="+("Bmsce".equals("Bmsce")));
+        System.out.println("Bmsce equals College="+("Bmsce".equals("College")));
+        System.out.println("Bmsce equals BMSCE="+("Bmsce".equals("BMSCE")));
+        
+        //7
+        String s1="Bmsce college";
+        String s2="Welcome to Bmsce College of Engineering";
+        if(s1.regionMatches(0,s2,0,13))
+        System.out.println("Substring matched");
+        else
+        System.out.println("Not matched");
+        
+        //8
+        System.out.println("startsWith() demo:");
+        System.out.println("Does eclipse start with ecl?:"+("eclipse".startsWith("ecl")));
+        System.out.println("Does eclipse start with lec?:"+("eclipse".startsWith("lec")));
+        
+        //9
+        System.out.println("endsWith() demo:");
+        System.out.println("Does eclipse end with pse?:"+("eclipse".endsWith("pse")));
+        System.out.println("Does eclipse end with ecl?:"+("eclipse".endsWith("ecl")));
+        
+        //10
+        System.out.println("equals versus ==");
+        String o="Beautiful";
+        String p="Beautiful";
+        System.out.println("String 1:"+o);
+        System.out.println("String 2:"+p);
+        System.out.println("Equals:"+(o.equals(p)));
+        System.out.println("=="+(o==p));
+        
+        System.out.println("Sneha N Shastri - 1BM22CS283");
+    }
+}
+
+Output:
+
+Bmsce equals Bmsce=true
+Bmsce equals College=false
+Bmsce equals BMSCE=false
+
+Not matched
+
+startsWith() demo:
+Does eclipse start with ecl?:true
+Does eclipse start with lec?:false
+
+endsWith() demo:
+Does eclipse end with pse?:true
+Does eclipse end with ecl?:false
+
+equals versus ==
+String 1:Beautiful
+String 2:Beautiful
+Equals:true
+==true
+
+Sneha N Shastri - 1BM22CS283
