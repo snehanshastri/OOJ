@@ -1,0 +1,64 @@
+//19
+abstract class Fly
+{
+    public abstract void fly();
+    public abstract void makesound();
+}
+
+class Eagle extends Fly
+{
+    public void fly()
+    {
+        System.out.println("The eagle flies high");
+    }
+    public void makesound()
+    {
+        System.out.println("The eagle emits a high pitched whistle.");
+    }
+}
+
+class Hawk extends Fly
+{
+    public void fly()
+    {
+        System.out.println("The hawk flies lower");
+    }
+    public void makesound()
+    {
+        System.out.println("The hawk screeches keaaar");
+    }
+}
+
+class Birdmain
+{
+    public static void main(String args[])
+    {
+        System.out.println("Invoking eagle!");
+        Eagle eg=new Eagle();
+        eg.fly();
+        eg.makesound();
+        System.out.println("Invoking hawk!");
+       Hawk hk=new Hawk();
+        hk.fly();
+        hk.makesound();
+        
+        System.out.println("Sneha N Shastri - 1BM22CS283");
+    }
+}
+
+//20
+
+
+
+Output for q.19:
+
+Invoking eagle!
+The eagle flies high
+The eagle emits a high pitched whistle.
+Invoking hawk!
+The hawk flies lower
+The hawk screeches keaaar
+Sneha N Shastri - 1BM22CS283
+
+Output for q.20:
+
