@@ -1,0 +1,46 @@
+import java.util.Scanner;
+class StringDemo3
+{
+    public static void main(String args[])
+    {
+        Scanner scan=new Scanner(System.in);
+        
+        //concat
+        String s1="Hello";
+        String s2="World";
+        System.out.println("Concatenated Result:"+(s1.concat(s2)));
+        
+        //replace
+        String s="College";
+        System.out.println(s.replace('l','m'));
+        
+        //trim
+        String x="       Hello Friends        ";
+        System.out.println(x.trim());
+        
+String org = "Thwas was a test.Thwas was too.";
+String search = "was";
+String sub = "is";
+String result = "";
+int i;
+do { // replace all matching substrings
+i = org.indexOf(search);
+if(i != -1) {
+result = org.substring(0, i);
+result = result + sub;
+result = result + org.substring(i + search.length());
+org = result;
+}
+} while(i != -1);
+System.out.println("Result:"+result);
+System.out.println("Sneha N Shastri - 1BM22CS283");
+}
+}
+
+Output:
+
+Concatenated Result:HelloWorld
+Commege
+Hello Friends
+Result:This is a test.This is too.
+Sneha N Shastri - 1BM22CS283
