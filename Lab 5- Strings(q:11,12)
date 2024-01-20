@@ -1,0 +1,97 @@
+//q.11
+class Sorting
+{
+    public static void main(String args[])
+    {
+        String arr[]={"van","watch","ball","cat","xmas","yatch","zee","apple","ice","jug","kite","lift","man","net","orange","dog","ent","free","gun","hunt","parrot","queen","ring","star","tree","umbrella"};
+        for(int i=0;i<arr.length-1;i++)
+        {
+            for(int j=0;j<arr.length-1-i;j++)
+            {
+                if(arr[j].compareTo(arr[j+1])>0)
+                {
+                    String t=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=t;
+                }
+            }
+        }
+        System.out.println("Sorted array:");
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.println(arr[i]);
+        }
+       System.out.println("Sneha N Shastri - 1BM22CS283");
+    }
+}
+
+//q.12
+class Sorting
+{
+    public static void main(String args[])
+    {
+        String arr[]={"1","2","3","4","5","6","7","8","9","10"};
+        for(int i=0;i<arr.length-1;i++)
+        {
+            for(int j=0;j<arr.length-1-i;j++)
+            {
+                if(arr[j].compareTo(arr[j+1])>0)
+                {
+                    String t=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=t;
+                }
+            }
+        }
+        System.out.println("Sorted array:");
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.println(arr[i]);
+        }
+        System.out.println("Sneha N Shastri - 1BM22CS283");
+    }
+}
+
+Output for q.11
+Sorted array:
+apple
+ball
+cat
+dog
+ent
+free
+gun
+hunt
+ice
+jug
+kite
+lift
+man
+net
+orange
+parrot
+queen
+ring
+star
+tree
+umbrella
+van
+watch
+xmas
+yatch
+zee
+Sneha N Shastri - 1BM22CS283
+
+Output for q.12
+Sorted array:
+1
+10
+2
+3
+4
+5
+6
+7
+8
+9
+Sneha N Shastri - 1BM22CS283
