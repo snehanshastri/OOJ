@@ -1,0 +1,72 @@
+public class StringBufferDemo {
+    public static void main(String[] args) {
+        // Initialize a StringBuffer
+        StringBuffer stringBuffer = new StringBuffer("Hello, World!");
+
+        // setLength(int newLength): Sets the length of the string
+        stringBuffer.setLength(5);
+        System.out.println("setLength(5): " + stringBuffer);
+
+        // charAt(int index): Returns the character at the specified index
+        char charAtIndex = stringBuffer.charAt(1);
+        System.out.println("charAt(1): " + charAtIndex);
+
+        // setCharAt(int index, char ch): Sets the character at the specified index
+        stringBuffer.setCharAt(1, 'E');
+        System.out.println("setCharAt(1, 'E'): " + stringBuffer);
+
+        // getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin): Copies characters into a destination char array
+        char[] charArray = new char[5];
+        stringBuffer.getChars(0, 5, charArray, 0);
+        System.out.print("getChars(0, 5): ");
+        for (char ch : charArray) {
+            System.out.print(ch);
+        }
+        System.out.println();
+
+        // append(String str): Appends the specified string to the end
+        stringBuffer.append(" GPT");
+        System.out.println("append(\" GPT\"): " + stringBuffer);
+
+        // insert(int offset, String str): Inserts the specified string at the specified offset
+        stringBuffer.insert(7, " Awesome");
+        System.out.println("insert(7, \" Awesome\"): " + stringBuffer);
+
+        // reverse(): Reverses the content of the StringBuffer
+        stringBuffer.reverse();
+        System.out.println("reverse(): " + stringBuffer);
+
+        // delete(int start, int end): Deletes the characters between the specified start and end index
+        stringBuffer.delete(7, 15);
+        System.out.println("delete(7, 15): " + stringBuffer);
+
+        // deleteCharAt(int index): Deletes the character at the specified index
+        stringBuffer.deleteCharAt(2);
+        System.out.println("deleteCharAt(2): " + stringBuffer);
+
+        // replace(int start, int end, String str): Replaces the characters between start and end with the specified string
+        stringBuffer.replace(1, 5, "i");
+        System.out.println("replace(1, 5, \"i\"): " + stringBuffer);
+
+        // substring(int start): Returns a substring starting from the specified index
+        String substring = stringBuffer.substring(2);
+        System.out.println("substring(2): " + substring);
+        
+        System.out.println("Sneha N Shastri - 1BM22CS283");
+    }
+}
+
+Output:
+
+setLength(5): Hello
+charAt(1): e
+setCharAt(1, 'E'): HEllo
+getChars(0, 5): HEllo
+append(" GPT"): HEllo GPT
+insert(7, " Awesome"): HEllo G AwesomePT
+reverse(): TPemosewA G ollEH
+delete(7, 15): TPemoseEH
+deleteCharAt(2): TPmoseEH
+replace(1, 5, "i"): TieEH
+substring(2): eEH
+Sneha N Shastri - 1BM22CS283
