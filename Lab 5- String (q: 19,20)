@@ -48,6 +48,59 @@ class Birdmain
 
 //20
 
+abstract class Shape
+{
+    public abstract void calculateArea();
+    public abstract void calculatePerimeter();
+}
+
+class Triangle extends Shape
+{
+    int s1=3;
+    int b=8;
+    int h=4;
+    public void calculateArea()
+    {
+        double area=(0.5)*b*h;
+        System.out.println("Area of triangle is:"+area);
+    }
+    public void calculatePerimeter()
+    {
+        double perimeter=s1+b+h;
+        System.out.println("Perimeter of triangle is:"+perimeter);
+    }
+}
+
+class Circle extends Shape
+{
+    int r=5;
+    public void calculateArea()
+    {
+        double area=Math.PI*r*r;
+        System.out.println("Area of circle is:"+area);
+    }
+    public void calculatePerimeter()
+    {
+        double perimeter=2*Math.PI*r;
+        System.out.println("Perimeter of triangle is:"+perimeter);
+    }
+}
+
+class ShapesMain
+{
+    public static void main(String args[])
+    {
+        Triangle t=new Triangle();
+        t.calculateArea();
+        t.calculatePerimeter();
+        
+        Circle c=new Circle();
+        c.calculateArea();
+        c.calculatePerimeter();
+        
+        System.out.println("Sneha N Shastri - 1BM22CS283");
+    }
+}
 
 
 Output for q.19:
@@ -62,3 +115,8 @@ Sneha N Shastri - 1BM22CS283
 
 Output for q.20:
 
+Area of triangle is:16.0
+Perimeter of triangle is:15.0
+Area of circle is:78.53981633974483
+Perimeter of triangle is:31.41592653589793
+Sneha N Shastri - 1BM22CS283
