@@ -1,0 +1,104 @@
+//Sneha N Shastri - 1BM22CS283
+//Student Class
+package CIE;
+import java.util.Scanner;
+
+public class Student {
+protected String usn = new String();
+protected String name = new String();
+protected int sem;
+public void inputStudentDetails() {  
+Scanner scan=new Scanner(System.in);
+System.out.println("Enter name:");
+name=scan.next();
+System.out.println("Enter usn:");
+usn=scan.next();
+System.out.println("Enter sem:");
+sem=scan.nextInt();
+
+}
+public void displayStudentDetails() { 
+System.out.println("Name:"+name);
+System.out.println("USN:"+usn);
+System.out.println("Sem:"+sem);
+}
+}
+
+//Internals class
+package CIE; 
+import java.util.Scanner;
+public class Internals extends Student
+ {
+protected int marks[] = new int[5];
+public void inputCIEmarks()
+
+{
+Scanner scan=new Scanner(System.in);
+System.out.println("Enter internal marks of 5 subjects:");
+for(int i=0;i<marks.length;i++)
+{
+marks[i]=scan.nextInt();
+}
+}
+}
+
+//External class
+package SEE;
+import CIE.Internals;
+import java.util.Scanner;
+public class External extends Internals {
+protected int marks[];
+protected int finalMarks[];
+
+public External() {
+marks = new int[5];
+finalMarks = new int[5];
+ }
+
+public void inputSEEmarks() {
+Scanner s = new Scanner(System.in);
+for(int i=0;i<5;i++) {
+System.out.print("Subject "+(i+1)+" marks: ");
+marks[i] = s.nextInt();
+ } 
+}
+
+public void calculateFinalMarks() {
+for(int i=0;i<5;i++)
+finalMarks[i] = marks[i]/2 + super.marks[i];
+}
+
+public void displayFinalMarks() { 
+displayStudentDetails();
+for(int i=0;i<5;i++)
+System.out.println("Subject " + (i+1) + ": " + finalMarks[i]);
+}
+}
+
+//MainMarks
+import SEE.External;
+
+class MainMarks
+{
+public static void main(String args[])
+{
+int numOfStudents = 2;
+External finalMarks[] = new External[numOfStudents];
+for(int i=0;i<numOfStudents;i++)
+{
+finalMarks[i] = new External();
+finalMarks[i].inputStudentDetails();
+System.out.println("Enter CIE marks");
+finalMarks[i].inputCIEmarks();
+System.out.println("Enter SEE marks");
+finalMarks[i].inputSEEmarks();
+}
+System.out.println("Displaying data:\n");
+for(int i=0;i<numOfStudents;i++)
+{
+finalMarks[i].calculateFinalMarks();
+finalMarks[i].displayFinalMarks();
+} //end of for loop
+} 
+}
+
