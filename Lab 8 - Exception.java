@@ -39,7 +39,7 @@ throw new WrongAge("Age cannot be negative.");
 
 public void check()throws WrongAge
 {
-if(sonage>age)
+if(sonage>=age)
 throw new WrongAge("Son's age cannot be greater than father's age.");
 }
 
