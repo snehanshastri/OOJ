@@ -1,0 +1,51 @@
+class NewThread implements Runnable
+{ 
+Thread t;
+NewThread()
+{
+t=new Thread(this, "NThread");
+System.out.println("CT:"+t);
+t.start();
+}
+
+public void run()
+{
+try
+{
+for(int n=5;n>0;n--)
+{
+System.out.println("CSE");
+Thread.sleep(2000);
+}
+}
+catch(InterruptedException ie) {
+System.out.println("CSE thread interrupted");
+ }
+
+System.out.println("CSE thread quitting");
+}
+}
+
+
+class Thread2
+{
+public static void main(String ss[])
+{
+new NewThread();
+System.out.println("Back in main");
+try
+{
+for(int n=5;n>0;n--)
+{
+System.out.println("BMS College of Engineering");
+Thread.sleep(10000); 
+}
+}
+catch(InterruptedException ie)
+{
+System.out.println("BMS thread interrupted");
+}
+System.out.println("BMS thread quitting.");
+System.out.println("Sneha N Shastri ------- 1BM22CS283");
+} 
+}
